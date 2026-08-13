@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f6f8fc"><title>Nha Trang Trip 2026</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f6f8fc;color:#18212b;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans KR","Segoe UI",sans-serif}
+button,input{font:inherit}.wrap{max-width:1080px;margin:auto;padding-bottom:90px}.head{padding:28px 22px 18px;background:linear-gradient(135deg,#edf3ff,#fff);border-bottom:1px solid #e4e8ef}.headin{max-width:1030px;margin:auto}.ey{font-size:12px;font-weight:900;color:#4e7cff;letter-spacing:1.5px}.title{font-size:32px;font-weight:950;margin:4px 0}.date{color:#7c8795}
+.hero{margin:16px auto;padding:20px;max-width:1030px;background:#fff;border:1px solid #e4e8ef;border-radius:22px}.dday{color:#7c8795}.dday b{font-size:38px;color:#4e7cff;margin-right:7px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:15px}.stat{background:#fafbfe;border:1px solid #e7ebf1;border-radius:15px;padding:13px}.stat small{color:#7c8795}.stat strong{display:block;font-size:18px;margin-top:4px}.progress{height:7px;background:#e9edf3;border-radius:99px;margin-top:8px;overflow:hidden}.bar{height:100%;background:#4e7cff;width:0}
+.nav{max-width:1030px;margin:15px auto;display:flex;gap:7px;padding:7px;background:#fff;border:1px solid #e4e8ef;border-radius:16px}.nav button{border:0;background:transparent;color:#7c8795;padding:10px 15px;border-radius:11px;font-weight:800;cursor:pointer}.nav button.active{background:#edf2ff;color:#4e7cff}
+main{max-width:1030px;margin:auto}section{display:none;padding:0 4px}section.active{display:block}.st{font-size:23px;font-weight:950;margin:10px 0 13px}.card{background:#fff;border:1px solid #e4e8ef;border-radius:18px;padding:15px;margin-bottom:11px}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.muted{color:#7c8795;font-size:13px}.pill{background:#edf2ff;color:#4e7cff;border-radius:99px;padding:5px 9px;font-size:11px;font-weight:900}.add{display:flex;gap:8px;margin-bottom:11px}.add input{min-width:0;flex:1;border:1px solid #dfe4ec;border-radius:12px;padding:11px 12px}.btn{border:0;background:#4e7cff;color:#fff;border-radius:12px;padding:0 15px;font-weight:900}.item{display:flex;align-items:center;gap:10px}.item label{flex:1}.item input[type=checkbox]{width:20px;height:20px;accent-color:#4e7cff}.done{text-decoration:line-through;color:#a6adb7}.del{border:0;background:none;color:#aeb5bf;font-size:20px}.timeline .day{padding:13px 0;border-bottom:1px solid #edf0f4;line-height:1.7}.timeline .day:last-child{border:0}.total{font-size:28px;font-weight:950}.empty{text-align:center;color:#8a94a1;padding:25px}
+.login{position:fixed;inset:0;background:#f6f8fc;display:flex;align-items:center;justify-content:center;padding:20px;z-index:50}.loginbox{width:min(400px,100%);background:#fff;border:1px solid #e4e8ef;border-radius:24px;padding:28px;box-shadow:0 15px 50px #22314b14}.loginbox h1{margin:0 0 5px;font-size:27px}.loginbox p{color:#7c8795;margin-top:4px}.loginbox input{display:block;width:100%;padding:13px;margin:10px 0;border:1px solid #dfe4ec;border-radius:12px}.loginbox button{width:100%;height:46px;border:0;background:#4e7cff;color:#fff;border-radius:12px;font-weight:900}.err{color:#e14f67;font-size:13px;min-height:18px}
+.logout{float:right;border:0;background:#fff;border:1px solid #dfe4ec;border-radius:10px;padding:7px 10px;color:#7c8795}
+@media(max-width:700px){.head{padding:22px 16px 15px}.title{font-size:28px}.hero{margin:12px 12px;padding:16px}.stats{grid-template-columns:1fr 1fr}.nav{display:none}main{padding:0 12px}.add{flex-wrap:wrap}.add input{min-width:calc(50% - 4px)}.add .btn{height:44px}.bottom{position:fixed;display:grid;grid-template-columns:repeat(5,1fr);bottom:0;left:0;right:0;background:#fffffff2;backdrop-filter:blur(15px);border-top:1px solid #e4e8ef;padding:7px 5px calc(7px + env(safe-area-inset-bottom));z-index:20}.bottom button{border:0;background:none;color:#7c8795;font-size:10px}.bottom button.active{color:#4e7cff;font-weight:900}.bottom span{display:block;font-size:19px;margin-bottom:2px}}
+@media(min-width:701px){.bottom{display:none}}
+</style></head>
+<body>
+<div id="login" class="login"><div class="loginbox"><h1>🇻🇳 Nha Trang Trip</h1><p>여행 준비 사이트에 로그인하세요.</p><input id="id" placeholder="아이디"><input id="pw" type="password" placeholder="비밀번호" onkeydown="if(event.key==='Enter')login()"><div class="err" id="err"></div><button onclick="login()">로그인</button></div></div>
+<div class="wrap" id="app" style="display:none">
+<header class="head"><div class="headin"><button class="logout" onclick="logout()">로그아웃</button><div class="ey">TRAVEL CHECKLIST</div><div class="title">🇻🇳 NHA TRANG</div><div class="date">2026.09.06 — 2026.09.12</div></div></header>
+<div class="hero"><div class="dday"><b id="dday"></b> 나트랑 여행까지</div><div class="stats">
+<div class="stat"><small>🧳 준비</small><strong id="ps"></strong><div class="progress"><div class="bar" id="pb"></div></div></div>
+<div class="stat"><small>🛍️ 쇼핑</small><strong id="ss"></strong><div class="progress"><div class="bar" id="sb"></div></div></div>
+<div class="stat"><small>💰 지출</small><strong id="ms"></strong></div><div class="stat"><small>🎁 선물</small><strong id="gs"></strong></div>
+</div></div>
+<div class="nav" id="nav"></div><main id="main"></main>
+<nav class="bottom" id="bottom"></nav></div>
+<script>
+let state;
+const tabs=[["home","🏠","홈"],["prep","🧳","준비"],["shop","🛍️","쇼핑"],["schedule","📅","일정"],["money","💰","지출"]];
+async function api(url,opt={}){let r=await fetch(url,opt);if(r.status===401){showLogin();throw 0}return r.json()}
+async function login(){let r=await fetch("/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({id:id.value,password:pw.value})});if(r.ok){login.style.display="none";app.style.display="block";await load()}else err.textContent="아이디 또는 비밀번호가 맞지 않습니다."}
+async function logout(){await fetch("/logout");location.reload()}
+function showLogin(){login.style.display="flex";app.style.display="none"}
+async function load(){state=await api("/api/state");build();render()}
+function save(){return api("/api/state",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(state)})}
+function won(n){return "₩"+Number(n||0).toLocaleString("ko-KR")}
+function build(){nav.innerHTML=tabs.map((t,i)=>`<button class="${i?'':'active'}" onclick="tab('${t[0]}',this)">${t[1]} ${t[2]}</button>`).join("");bottom.innerHTML=tabs.map((t,i)=>`<button class="${i?'':'active'}" onclick="tab('${t[0]}',this)"><span>${t[1]}</span>${t[2]}</button>`).join("");
+main.innerHTML=`<section id="home" class="active"><div class="st">여행 한눈에 보기</div><div class="card"><div class="row"><b>✈️ 출국</b><span class="pill">9/6 19:50</span></div><p class="muted">인천 → 나트랑 · RS0527</p></div><div class="card"><div class="row"><b>🎂 9/7</b><span class="pill">DAY 2</span></div><p>생일 · 나트랑 투어</p></div><div class="card"><div class="row"><b>🛍️ 9/11</b><span class="pill">SHOPPING</span></div><p>기념품 쇼핑</p></div></section>
+<section id="prep"><div class="st">🧳 가져갈 것</div><div class="add"><input id="pi" placeholder="준비물 추가"><button class="btn" onclick="addPrep()">추가</button></div><div id="pl"></div></section>
+<section id="shop"><div class="st">🛍️ 살 기념품</div><div class="add"><input id="si" placeholder="살 물건"><input id="sp" type="number" placeholder="예상 가격 ₩"><button class="btn" onclick="addShop()">추가</button></div><div id="sl"></div></section>
+<section id="schedule"><div class="st">📅 여행 일정</div><div class="card timeline"><div class="day"><b>9/6 · DAY 1</b><br>✈️ 19:50 인천 출발 → 22:55 나트랑 도착<br>🏨 호텔 체크인</div><div class="day"><b>9/7 · DAY 2</b><br>🎂 생일 · 🏝️ 나트랑 투어</div><div class="day"><b>9/8 · DAY 3</b><br>🏴‍☠️ 해적 투어</div><div class="day"><b>9/9 · DAY 4</b><br>🎢 빈원더스</div><div class="day"><b>9/10 · DAY 5</b><br>🏨 리조트</div><div class="day"><b>9/11 · DAY 6</b><br>🛍️ 기념품 쇼핑</div><div class="day"><b>9/12 · DAY 7</b><br>✈️ 00:05 귀국</div></div></section>
+<section id="money"><div class="st">💰 지출 기록</div><div class="card"><div class="muted">총 지출</div><div class="total" id="mt"></div></div><div class="add"><input id="mi" placeholder="예: 식비"><input id="mp" type="number" placeholder="금액"><button class="btn" onclick="addMoney()">추가</button></div><div id="ml"></div></section>`;
+}
+function tab(id,btn){document.querySelectorAll("main section").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll(".nav button,.bottom button").forEach(x=>x.classList.remove("active"));document.querySelectorAll(`[onclick*="'${id}'"]`).forEach(x=>x.classList.add("active"));scrollTo(0,0)}
+function list(el,arr,type){el.innerHTML=arr.length?"":"<div class='card empty'>아직 등록된 항목이 없어요.</div>";arr.forEach((x,i)=>el.insertAdjacentHTML("beforeend",`<div class="card item"><input type="checkbox" ${x.d?"checked":""} onchange="toggle('${type}',${i})"><label class="${x.d?"done":""}"><b>${x.t}</b>${type==="shop"?`<div class="muted">${won(x.p)}</div>`:""}</label><button class="del" onclick="del('${type}',${i})">×</button></div>`))}
+function render(){list(pl,state.prep,"prep");list(sl,state.shop,"shop");let total=state.money.reduce((s,x)=>s+x.p,0);ml.innerHTML=state.money.length?"":"<div class='card empty'>아직 지출 기록이 없어요.</div>";state.money.forEach((x,i)=>ml.insertAdjacentHTML("beforeend",`<div class="card"><div class="row"><b>${x.t}</b><span>${won(x.p)}</span><button class="del" onclick="del('money',${i})">×</button></div></div>`));let dp=state.prep.filter(x=>x.d).length,ds=state.shop.filter(x=>x.d).length;ps.textContent=`${dp} / ${state.prep.length}`;ss.textContent=`${ds} / ${state.shop.length}`;gs.textContent=`${state.gifts.length}개`;ms.textContent=won(total);mt.textContent=won(total);pb.style.width=(dp/state.prep.length*100||0)+"%";sb.style.width=(ds/state.shop.length*100||0)+"%"}
+async function toggle(t,i){state[t][i].d=state[t][i].d?0:1;await save();render()}async function del(t,i){state[t].splice(i,1);await save();render()}
+async function addPrep(){let v=pi.value.trim();if(v){state.prep.push({t:v,d:0});pi.value="";await save();render()}}
+async function addShop(){let v=si.value.trim(),p=+sp.value||0;if(v){state.shop.push({t:v,p,d:0});si.value="";sp.value="";await save();render()}}
+async function addMoney(){let v=mi.value.trim(),p=+mp.value||0;if(v&&p){state.money.push({t:v,p});mi.value="";mp.value="";await save();render()}}
+function dday(){let d=Math.ceil((new Date("2026-09-06T00:00:00+09:00")-new Date())/86400000);dday.textContent=d>0?"D-"+d:d===0?"D-DAY":"여행 중"}dday()
+fetch("/api/state").then(r=>{if(r.ok){login.style.display="none";app.style.display="block";load()}})
+</script></body></html>
