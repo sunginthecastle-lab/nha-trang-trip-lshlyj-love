@@ -5,7 +5,7 @@ const crypto = require("crypto");
 
 const PORT = process.env.PORT || 3000;
 const USER_ID = "이예지";
-const PASSWORD = process.env.TRIP_PASSWORD || "멍청이";
+const PASSWORD = process.env.TRIP_PASSWORD || "990420";
 const DB = path.join(__dirname, "data.json");
 
 const initial = {
